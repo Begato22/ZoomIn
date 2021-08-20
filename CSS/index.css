@@ -1,0 +1,881 @@
+/* common */
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.overlay{
+    position: absolute;
+    height: 100%;  /*هيملى مساحة الاب بتاعه*/
+    width: 100%;  /*هيملى مساحة الاب بتاعه*/
+    top: 0;
+    left: 0;
+    background-color: rgb(46, 34, 34,0.7);
+}
+.opacity-cover{
+    transition: 0.5s;
+}
+.opacity-cover:hover{
+    opacity: 0.7;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.section-header{
+    text-align: center;
+    padding: 70px 0px ;
+}
+.section-header .section-title{
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+.section-header .line{
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 0 auto 30px auto;
+    background-color: #6195ff;
+}
+
+.pd-y{
+    padding: 80px 0px;
+    /* margin-bottom: 30px; */
+}
+
+.centered{
+    margin: 0px 5%;
+}
+.clear{
+    clear: both;
+}
+
+.ltr-effect{
+    position: relative;
+}
+.ltr-effect::after{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: #333;
+    left: 0px;
+    top: 0px;
+    transition: width 0.5s;
+    z-index: -1;
+}
+.ltr-effect:hover::after{
+    width: 100%;
+}
+
+.ttb-effect{
+    position: relative;
+}
+.ttb-effect::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0%;
+    background-color: #333;
+    left: 0px;
+    top: 0px;
+    transition: height 0.5s;
+    z-index: -1;
+}
+.ttb-effect:hover::after{
+    height: 100%;
+}
+/* ______________________________________________ */
+
+
+
+.header{
+    position: absolute; /* بوزيشن بلوك وابسليوت بيحولو العنصر من ديسبلاي بلوك لدسبلاي لاين بلوك*/
+    /*الهيدر هيختفي بعد استخدام بوزيشن فيكسد فا هيبقى ورا الهوم عشان كدة هستخدم الخاصية الجية دي*/
+    z-index: 1;
+    /*وهعدل الويدث من جديد بسبب تاثير البوزيشن*/
+    width: 100%;
+}
+
+.container{
+    /* background-color: aquamarine; */
+    width: 80%;
+    margin: auto;
+}
+
+.container .logo img{
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    float: left;
+}
+
+.container .navbar {
+    list-style-type: none;
+    float: right;
+    padding: 35px 0px;
+}
+
+.header-content{
+    /* overflow: hidden; */  /* عمل مشكلة انه مظهرش محتوى الدروبداون فا لازم ارجع الكلير تاني*/
+}
+
+
+.container  .navbar > li{
+    display: inline-block;
+}
+
+.header  .navbar > li > a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+}
+
+.header  .navbar > li > a.active::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin-top: 3px;
+    background-color: #6195ff;
+}
+
+.header .navbar > li > a::after{
+    content: "";
+    display: block;
+    width: 0%;
+    height: 3px;
+    margin-top: 3px;
+    background-color: #6195ff;
+    transition:width 0.5s;
+}
+
+.header .navbar > li > a:hover::after{
+    
+    width: 100%;
+    /* transition: 0.6s; */
+}
+
+/*Drop Down*/
+.dropdown {
+    position: relative;
+}
+.dropdown-menu{
+    position: absolute;
+    list-style-type: none;
+    background-color: #6195ff;
+    color: white;
+    text-align: center;
+    padding-left: 0;
+    left: 18%;
+    top: 82%;
+    /* To Hide Dropdown*/
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s , visibility 0.3s;
+}
+
+/*ترجة البتاع دي لما اجي اعمل هوفر على الدروب داون هاتلي بقى دروب داون منيو*/
+.dropdown:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+}
+.dropdown-menu li{
+    display: block;
+}
+.dropdown-menu li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    width: 150px;
+    padding: 10px;
+}
+
+.dropdown-menu li:hover{
+    background-color: white;
+}
+.dropdown-menu li a:hover{
+    color: #6195ff;
+}
+
+/* Home Section */
+
+.home{
+    background-image: url("images/Background/top-view-photography-accesories-with-copy-space.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.home-content{
+    width: 65%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.home-content .title{
+    margin-bottom: 30px;
+    font-size: 45px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 200px;
+}
+
+.home-content .descriotion{
+    margin-bottom: 20px;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 1.5    ;
+}
+
+.home-content .btn{
+    width: 160px;
+    padding: 15px 5px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 20px;
+
+}
+
+.btn.btn-learn{
+    background-color: #6195ff;
+    margin-left: 5px;
+    color: white;
+}
+/*_________________________ About Section _________________________*/
+.about .container{
+    width: 80%;
+    margin: auto;
+}
+.about-item{
+    float: left;
+    width: 30%;
+    text-align: center;
+    padding: 50px 20px;
+    border: 1px solid rgb(100, 99, 99,0.3);
+}
+
+.about-item .icon{
+    color: #6195ff;
+    margin-bottom: 10px;
+}
+.about-item-title{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-weight: 2000;
+}
+.about-item:hover .about-item-title{
+    color: white;
+}
+.about-item-desc{
+    line-height: 1;
+    margin-bottom: 10px;
+    color: #899;
+}
+.about-item-link{
+    text-transform: capitalize;
+    color: #6195ff;
+    font-weight: 700;
+}
+
+.about-item:hover .about-item-link{
+    font-weight: 1200;
+}
+/*_________________________ Portfolio Section _________________________*/
+.portfolio .container{
+    width: 80%;
+    margin: auto;
+}
+.portfolio-item{
+    float: left;
+    width: 30%;
+    height: 300px;
+    margin-bottom: 60px;
+    border: 1px solid rgb(100, 99, 99,0.3);
+    position: relative;
+}
+
+.portfolio-item-img{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.portfolio-above-layer{
+    position: absolute;
+    background-color: rgb(0, 0, 0 , 0.7);
+    width: 110%;
+    height: 110%;
+    left: -5%;
+    top: -5%;
+    text-align: center;
+    padding: 19% 0px;
+    opacity: 0 ;
+    visibility: hidden;
+    transition: opacity 0.4s , visibility 0.4s ;
+    text-transform: capitalize;
+}
+.portfolio-category , .portfolio-title{
+    margin-bottom: 10px;
+    color: white;
+    font-size: 30px;
+    position: relative;
+    top: -20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: top 0.4s , visibility 0.3s , opacity 0.3s;
+}
+.portfolio-category{
+    color: #6195ff;
+}
+
+.portfolio-title{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 300;
+    top: -30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: top 0.4s , visibility 0.3s , opacity 0.3s;
+}
+.portfolio-icon{
+    color: white;
+    margin-right: 0.5px;
+    background-color: #6195ff;
+    padding: 15px;
+    position: relative;
+    top: -40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: top 0.4s , visibility 0.3s , opacity 0.3s;
+}
+
+.portfolio-item:hover .portfolio-above-layer{
+    opacity: 1;
+    visibility: visible;
+}
+
+.portfolio-item:hover .portfolio-category,
+.portfolio-item:hover .portfolio-title,
+.portfolio-item:hover .portfolio-icon{
+    top: 0px;
+    visibility: visible;
+    opacity: 1;
+}
+
+/*_________________________ Offer Section ________________________*/
+.offer-title{
+    display: inline-block;
+    position: relative;
+    bottom: 7px;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+.offer-icon{
+    margin-bottom: 5px;
+    color: #6195ff;
+}
+
+.offer-item{
+    width: 30%;
+    padding: 40px 15px;
+    border: 1px solid rgb(100, 99, 99,0.3);
+    float: left;
+    margin-bottom: 50px;
+}
+.offer-item:hover .offer-title{
+    color: white;
+}
+.offer-desc{
+    padding-left: 50px;
+    color: #899;
+}
+
+/*_________________________ Choose Section ________________________*/
+.choose-content{
+    background-color: rgb(243, 243, 243);
+    width: 100%;
+    height: 100vh;
+    padding: 120px 0px;
+    margin-bottom: 170px;
+}
+.section-header-choose::after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #6195ff;
+    margin-top: 0;
+}
+.section-header-choose .section-title{
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.choose-left-side{
+    width: 45%;
+    margin-right: 5%;
+    float: left;
+}
+
+.choose-right-side{
+    width: 45%;
+    float: right;
+    height: 400px;
+}
+.choose-img{
+    width: 100%;
+    height: 100%;
+}
+.choose-desc{
+    line-height: 20px;
+    padding: 30px 0px ;
+    color: #899;
+}
+.choose-correct{
+    position: relative;
+    margin-bottom: 12px;
+}
+.choose-correct-desc{
+    position: absolute;
+    display: inline-block;
+    padding-left: 10px;
+    font-size: large;
+    font-weight: 600;
+    bottom: 4px;
+    text-transform: capitalize;
+}
+.choose-icon{
+    color: #6195ff;
+}
+
+/*_________________________ Statistic Section ________________________*/
+
+.statistic-bg{
+    width: 100%;
+    height: 300px;
+    background-image: url("images/Background/background2.jpg");
+    /* background-size: cover; */
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.statistic-overlay{
+    background-color:rgb(46, 34, 34,0.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.statistic-item{
+    margin: 100px 2.5%;
+    width: 20%;
+    text-align: center;
+    float: left;
+}
+.statistic-icon{
+    display: block;
+    padding-bottom:10px ;
+    color: #6195ff;
+}
+.statistic-value{
+    display: block;
+    padding-bottom:10px ;
+    font-weight: bolder;
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+
+}
+.statistic-name{
+    display: block;
+    font-weight: 700;
+    color: white;
+    text-transform: capitalize;
+}
+
+/*_________________________ Pricing Section ________________________*/
+.pricing .container{
+    display: flex;
+    justify-content: space-between;
+}
+.pricing-card{
+    width: 100%;
+    height: auto;
+    padding: 20px 70px;
+    text-align: center;
+    /* float: left; */
+    border: 1px solid rgb(100, 99, 99,0.3);
+}
+.pricing-card:hover .pricing-button{
+    background-color: rgb(0, 0, 0 , 0);
+    color: #6195ff;
+    font-weight: bold;
+}
+.pricing-card:hover .pricing-title{
+    font-weight: bold;
+}
+.pricing-card:hover .pricing-value,
+.pricing-card:hover .pricing-duration{
+    color: white;
+}
+.pricing-title , .pricing-duration{
+    display: block;
+    margin-bottom:30px ;
+    font-size: larger;
+    text-transform: uppercase;
+    color: #6195ff;
+    
+}
+.pricing-duration{
+    font-size:small;
+    color: black;
+    font-weight: 600;
+}
+.pricing-box-value{
+    margin: 10px auto 30px auto;
+    border: 4px solid #6195ff;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    padding-top: 17%;
+}
+.pricing-value{
+    font-size: xx-large;
+    font-weight: 1000;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.pricing-desc{
+    margin: 10px 0px;
+    padding-left: 0px;
+    list-style: none;
+    color: #899;
+}
+.pricing-desc li{
+    padding: 10px 0px;
+    text-transform: capitalize;
+}
+.pricing-button{
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    border: 3px solid #6195ff;
+    border-radius: 5px;
+    background-color: white;
+    text-transform: capitalize;
+}
+.pricing-button a{
+    color: #6195ff;
+}
+.pricing-card:hover .pricing-button{
+    background-color: rgb(0, 0, 0 , 0);
+    color: #6195ff;
+    font-weight: bold;
+}
+.pricing-card:hover .pricing-title{
+    font-weight: bold;
+}
+.pricing-card:hover .pricing-value,
+.pricing-card:hover .pricing-duration{
+    color: white;
+}
+.pricing-card:hover .pricing-desc{
+    color: white;
+}
+
+/*_________________________ Testimonial Section ________________________*/
+.testimonial-bg{
+    width: 100%;
+    height: 400px;
+    background-image: url("images/Background/background3.jpg");
+    /* background-size: cover; */
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    margin-bottom: 50px;
+}
+.testimonial-card{
+    width: 50%;
+    margin: 80px 0;
+    padding: 35px 20px;
+    float: left;
+}
+.testimonial-header{
+    position: relative;
+}
+.testimonial-img-person{
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    bottom: 40px;
+}
+.testimonial-img{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(0, 0, 0 , 0); 
+    border-radius: 50%;
+}
+.testimonial-name{
+    display: inline-block;
+    position: absolute;
+    bottom: 30px ;
+    text-transform: capitalize;
+    padding-left: 10px;
+    font-weight: bolder;
+    color: white;
+}
+.testimonial-postion{
+    display: inline-block;
+    position: absolute;
+    bottom: 12px;
+    padding-left: 10px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #6195ff;
+}
+.testimonial-desc{
+    margin: 15px 0 10px 0; 
+    color: white;
+    font-weight: 500;
+}
+
+/*_________________________ Team Section ________________________*/
+
+.team-card{
+    width: 30%;
+    height: 380px;
+    float: left;
+    background-color: rgb(243, 243, 243);
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    z-index: 0;
+}
+.team-img-container{
+    width: 280px;
+    height: 300px;
+    margin: auto;
+    padding: 30px 0px;
+    position: relative;
+}
+.team-img{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition:opacity 0.4s ;
+    position: relative;
+}
+.team-name{
+    text-transform: capitalize;
+    font-weight: 1000;
+    color: black;
+    margin-bottom: 10px;
+}
+.team-overlay-layer{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(0, 0, 0 , 0.7);;
+    z-index: -20;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.4s ,opacity 0.4s ;
+}
+.team-position{
+    color: #6195ff;
+}
+.team-card:hover .team-overlay-layer{
+    visibility: visible;
+    opacity: 0.5;
+}
+.team-card:hover .team-name{
+    color: white;
+}
+.team-card:hover .team-img{
+    opacity: 0.6;
+}
+.team-icons{
+    position: absolute;
+    top: 30px;
+    right: 0px;
+}
+.team-icons a{
+    background-color: #6195ff;
+    color: white;
+    padding: 12px 10px;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition:visibility 0.4s ,opacity 0.4s  ;
+}
+.team-card:hover  .team-icons a{
+    visibility: visible;
+    opacity: 1;
+}
+/*_________________________ News Section ________________________*/
+.news{
+    background-color: rgb(243, 243, 243);
+}
+.news-content{
+    /* background-color: rgb(243, 243, 243); */
+    height: 100vh;
+}
+.news-item{
+    background-color: white;
+    width: 30%;
+    float: left;
+    padding-bottom:30px;
+}
+.news-block-img{
+    width: 100%;
+}
+.news-img{
+    width: 100%;
+    height: 200px;
+}
+.news-recommend , .news-title , .news-desc , .news-link{
+    padding-left: 15px;
+}
+.news-recommend{
+    list-style: none;
+    margin: 20px 0px;
+}
+.news-recommend li{
+    display: inline-block;
+    margin-right: 8px;
+    text-transform: capitalize;
+}
+.news-recommend li i{
+    margin-right: 0px;
+    color: #6195ff;
+}
+.news-desc{
+    margin-bottom: 10px;
+}
+.news-title{
+    font-weight: 900;
+}
+.news-title , .news-link{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+/*_________________________ Contact Section ________________________*/
+.contact-info{
+    margin-bottom:20px ;
+}
+.contact-info-card{
+    width: 30%;
+    text-align: center;
+    float: left;
+    text-transform: capitalize;
+}
+.contact-info-card .center{
+    text-transform: none;
+}
+.contact-info-card i ,.contact-info-card h2 , .contact-info-card span{
+    padding-bottom:10px ;
+}   
+.contact-info-card i{
+    color: #6195ff;
+}
+.contact-form{
+    padding: 0px;
+    text-align: center;
+}
+.form-name , .form-email{
+    width: 40%;
+    margin: 10px;
+    height: 40px;
+    border: 0 solid black;
+    border-radius: 3px;
+    background-color: rgb(243, 243, 243);
+    padding-left: 10px;
+    text-transform: capitalize;
+}
+.form-subject , .form-message{
+    display: block;
+    width: 82.2%;
+    height: 40px;
+    margin: 0 auto 10px auto;
+    border: 0 solid black;
+    padding-left: 10px;
+    border-radius: 3px;
+    background-color: rgb(243, 243, 243);
+    text-transform: capitalize;
+}
+.form-message{
+    height: 80px;
+}
+.contact-form input:hover , .contact-form input:focus-visible {
+    border:solid #6195ff;
+    border-width: 0.5px 0.5px 4px 0.5px;
+}
+.form-button{
+    width: 160px;
+    padding: 15px 5px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 20px;
+    color: white;
+    background-color: #6195ff;
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+
+/*_________________________ Footer Section ________________________*/
+.footer-content{
+    text-align: center;
+    margin-top: 50px;
+    background-color: #333;
+    padding: 50px 0px;
+}
+.footer-logo{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+.footer-logo img{
+    width: 100%;
+    height: 100%;
+}
+.footer-social-media{
+    padding-left: 0;
+}
+.footer-social-media li {
+    display: inline-block;
+}
+.footer-social-media li i{
+    background-color: #6195ff;
+    padding: 15px 15px;
+    margin: 20px 4px;
+    color: white;
+    border-radius: 50%;
+}
+.footer-social-media .fa-facebook{
+    padding: 15px 20px;
+}
+.footer-desc{
+    color: #899;
+}
+.footer-desc span{
+    color: #6195ff;
+    font-weight: 800;
+    text-transform: uppercase;
+}
